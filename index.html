@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" ng-app='LunchCheck'>
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+<body>
+   <div class="container" ng-controller='LunchCheckController'>
+     <h1>Lunch Checker</h1>
+
+       <span ng-form="myForm">
+         <div class="form-group">
+             <input id="lunch-menu" name="lunchmenu" type="text" ng-model="itemList" 
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control">
+         </div>
+       </span>
+       
+         <div class="form-group">
+             <button ng-click="checkToomuch();" class="btn btn-default">Check If Too Much</button>
+         </div>
+         <div class="form-group message">
+           <!-- Your message can go here. -->
+             <label ng-if="oky">{{messageDisplay}}</label>
+             <label ng-if="!oky">{{messageDisplay}}</label>
+             
+         </div>
+   </div>
+
+</body>
+</html>
